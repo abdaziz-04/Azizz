@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Abdul Aziz</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
   </head>
@@ -42,7 +43,7 @@
     <section class="jumbotron text-center">
       <img src="img/profil.jpg" alt="Abdul Aziz" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Abdul Aziz</h1>
-      <p class="lead">IT Enthusiast</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -61,7 +62,7 @@
             <h2>About Me</h2>
           </div>
         </div>
-        <div class="row justify-content-center fs-5 mb-4">
+        <div class="row justify-content-center fs-5 mb-4" data-aos="fade-up" data-aos-duration="1500">
           <div class="col"><p>Hello, My name is Abdul Aziz from Bondowoso Regency, An informatics engineering student at State Polytechnic of Malang, Interested in UI UX Design, Internet of Things, and Software development</p></div>
         </div>
       </div>
@@ -78,13 +79,13 @@
     <!-- Gallery -->
     <section id="gallery">
       <div class="container">
-        <div class="row text-center">
+        <div class="row text-center justify-content-center">
           <div class="col">
             <h2>Gallery</h2>
           </div>
           <div class="row">
             <div class="col-md-4 mb-3">
-              <div class="card shadow-sm">
+              <div class="card shadow-sm" data-aos="flip-left" data-aos-duration="800">
                 <img src="img/gallery/iot.jpg" class="card-img-top" alt="Internet of Things" />
                 <div class="card-body">
                   <p class="card-text">
@@ -95,7 +96,7 @@
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <div class="card shadow-sm">
+              <div class="card shadow-sm" data-aos="flip-left" data-aos-duration="800" data-aos-delay="50">
                 <img src="img/gallery/uiux.jpg" class="card-img-top" alt="PJBL RUS ANIMATION" />
                 <div class="card-body">
                   <p class="card-text">Program magang berbasis projek divisi UI/UX yang mempelajari Design Thinking, Heuristic Evaluation, Prototyping hingga testing kepada pengguna.</p>
@@ -103,10 +104,10 @@
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <div class="card shadow-sm">
+              <div class="card shadow-sm" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
                 <img src="img/gallery/magangjtv.jpg" class="card-img-top" alt="Magang JTV Jember" />
                 <div class="card-body">
-                  <p class="card-text">Program magang di JTV Jember yang mempelajari perekaman video, Editing video, Pengoperasian prompter, hingga dasar Animasi.</p>
+                  <p class="card-text">Program magang di stasiun televisi yang mempelajari dan mempraktekkan perekaman video, Editing video, Pengoperasian prompter, hingga dasar Animasi.</p>
                 </div>
               </div>
             </div>
@@ -174,6 +175,43 @@
       <p>Created with Bootstrap by <a href="https://www.instagram.com/abdazizz_04/" target="_blank" class="text-white fw-bold">Abdul Aziz</a></p>
     </footer>
     <!-- Akhir Footer -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", {
+        duration: 1,
+        delay: 1.5,
+        text: "IT Enthusiast",
+      });
+      gsap.from(".jumbotron img", {
+        duration: 1,
+        rotateY: 180,
+        opacity: 0,
+      });
+      gsap.from(".navbar", {
+        duration: 1.5,
+        y: "-100%",
+        opacity: 0,
+        ease: "bounce",
+      });
+      gsap.from(".display-4", {
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        duration: 0.5,
+        ease: back,
+      });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
